@@ -3,10 +3,10 @@ static int[] climbingLeaderboard(int[] scores, int[] alice) {
         
         var alice_rank = new int[alice.Length];
         var grouped = scores
-            .GroupBy(a => a)
-            .Select((g, i) => new{ Id = g.Key, Pos = i + 1})
-            .OrderBy(o => o.Id)
-            .ToList();
+                      .GroupBy(a => a)
+                      .Select((g, i) => new{ Id = g.Key, Pos = i + 1})
+                      .OrderBy(o => o.Id)
+                      .ToList();
 
         var count = grouped.Count;
         var index = count-1;
@@ -15,17 +15,11 @@ static int[] climbingLeaderboard(int[] scores, int[] alice) {
         {
             for (int j = index; j >= 0; j--)
             {
-                if (grouped[j].Id < alice[i])
+                if (grouped[j].Id <= alice[i])
                 {
-                   alice_rank[i] = grouped[j].Pos == 1 ? 1 : grouped[j].Pos;
+                   alice_rank[i] =  grouped[j].Pos;
                    break;
                 }
-                if (grouped[j].Id == alice[i])
-                {
-                   alice_rank[i] = grouped[j].Pos;
-                   break;
-                }
-                
                 alice_rank[i] = grouped[j].Pos+1;
             }
             //index--;
