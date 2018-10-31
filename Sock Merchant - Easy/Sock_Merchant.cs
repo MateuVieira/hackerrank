@@ -14,9 +14,9 @@
                 }
                 else if( item.Count  2)
                 {
-                    Console.WriteLine($Teste Recurs„o item = {item});
+                    Console.WriteLine($Teste Recurs√£o item = {item});
                     cont = conta(item.Count, cont);
-                    Console.WriteLine($Teste Recurs„o saida cont = {cont} n);
+                    Console.WriteLine($Teste Recurs√£o saida cont = {cont} n);
                 }
         }
 
@@ -25,7 +25,7 @@
 
     static int conta(int valor, int cont){
 
-            Console.WriteLine($Endrada funcÁ„o de recurs„o, valores valor = {valor}, cont = {cont} nn );
+            Console.WriteLine($Endrada func√ß√£o de recurs√£o, valores valor = {valor}, cont = {cont} nn );
         if( valor = 2)
         {
              Console.WriteLine($   IF -- cont = {cont}, valor = {valor});
